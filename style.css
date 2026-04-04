@@ -1980,3 +1980,32 @@ body.light-mode body::before { opacity: 0.015; }
     font-size: 1rem;
   }
 }
+
+/* ===== HERO BUTTONS MOBILE FIX ===== */
+@media (max-width: 768px) {
+  .hero-btns {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    width: 100%;
+  }
+  .btn-primary,
+  .btn-outline,
+  .btn-cv {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+    text-align: center;
+    padding: 0.9rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn-primary,
+  .btn-outline,
+  .btn-cv {
+    max-width: 100%;
+    font-size: 0.88rem;
+  }
+}
