@@ -414,19 +414,19 @@ themeToggle.addEventListener('click', () => {
   localStorage.setItem('mk-theme', next);
 });
 
-// ===== CONTACT FORM — mailto from visitor's email =====
+// ===== CONTACT FORM — Web3Forms (sends directly to Gmail) =====
 const contactForm   = document.getElementById('contact-form');
 const formStatus    = document.getElementById('form-status');
 const formSubmitBtn = document.getElementById('form-submit-btn');
 const formBtnText   = document.getElementById('form-btn-text');
 
 if (contactForm) {
-  contactForm.addEventListener('submit', (e) => {
+  contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    // Validate all fields
+    // Validate
     let valid = true;
-    contactForm.querySelectorAll('input, textarea').forEach(field => {
+    contactForm.querySelectorAll('input:not([type=hidden]), textarea').forEach(field => {
       field.classList.remove('error');
       if (!field.value.trim()) { field.classList.add('error'); valid = false; }
     });
@@ -436,22 +436,37 @@ if (contactForm) {
       return;
     }
 
-    const name      = document.getElementById('cf-name').value.trim();
-    const fromEmail = document.getElementById('cf-email').value.trim();
-    const subject   = document.getElementById('cf-subject').value.trim();
-    const message   = document.getElementById('cf-message').value.trim();
+    // Loading state
+    formSubmitBtn.disabled = true;
+    formBtnText.textContent = 'Sending...';
+    formStatus.textContent = '';
+    formStatus.className = 'form-status';
 
-    // Build mailto: — opens visitor's email client, pre-filled to send TO Mohan
-    const body = `From: ${name} <${fromEmail}>\n\n${message}`;
-    const mailtoLink = `mailto:mohan.work.tech@gmail.com`
-      + `?subject=${encodeURIComponent(subject)}`
-      + `&body=${encodeURIComponent(body)}`;
+    try {
+      const formData = new FormData(contactForm);
+      // Override subject to include sender name
+      formData.set('subject', `Portfolio Message from ${formData.get('from_name')}`);
 
-    window.open(mailtoLink, '_blank');
+      const res  = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+      });
+      const data = await res.json();
 
-    formStatus.textContent = '✅ Your email client has opened — just hit Send!';
-    formStatus.className = 'form-status success';
-    contactForm.reset();
+      if (data.success) {
+        formStatus.textContent = '\u2705 Message sent! I\'ll get back to you soon.';
+        formStatus.className = 'form-status success';
+        contactForm.reset();
+      } else {
+        throw new Error(data.message || 'Submission failed');
+      }
+    } catch (err) {
+      formStatus.textContent = '\u274C Something went wrong. Please email me directly.';
+      formStatus.className = 'form-status error';
+    } finally {
+      formSubmitBtn.disabled = false;
+      formBtnText.textContent = 'Send Message';
+    }
   });
 }
 
