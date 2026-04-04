@@ -421,21 +421,123 @@
       <p class="section-sub">Consistent contributions and public projects</p>
     </div>
     <div class="github-grid">
+
+      <!-- GitHub Stats Card -->
       <div class="github-card tilt-card">
-        <img
-          src="https://github-readme-stats.vercel.app/api?username=itsmk08&show_icons=true&theme=transparent&hide_border=true&title_color=7c6fff&icon_color=00d4ff&text_color=94a3b8&bg_color=00000000"
-          alt="GitHub Stats" loading="lazy"/>
+        <div class="gh-card-header">
+          <i class="fa-brands fa-github"></i>
+          <span>GitHub Stats</span>
+          <a href="https://github.com/itsmk08" target="_blank" class="gh-profile-link">@itsmk08 <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+        <div class="gh-stats-grid">
+          <div class="gh-stat-item">
+            <i class="fa-solid fa-star" style="color:#fbbf24"></i>
+            <span class="gh-stat-num" id="gh-stars">—</span>
+            <span class="gh-stat-label">Total Stars</span>
+          </div>
+          <div class="gh-stat-item">
+            <i class="fa-solid fa-code-fork" style="color:#00d4ff"></i>
+            <span class="gh-stat-num" id="gh-forks">—</span>
+            <span class="gh-stat-label">Forks</span>
+          </div>
+          <div class="gh-stat-item">
+            <i class="fa-solid fa-book" style="color:#7c6fff"></i>
+            <span class="gh-stat-num" id="gh-repos">—</span>
+            <span class="gh-stat-label">Repositories</span>
+          </div>
+          <div class="gh-stat-item">
+            <i class="fa-solid fa-users" style="color:#34d399"></i>
+            <span class="gh-stat-num" id="gh-followers">—</span>
+            <span class="gh-stat-label">Followers</span>
+          </div>
+        </div>
       </div>
+
+      <!-- Top Languages Card -->
       <div class="github-card tilt-card">
-        <img
-          src="https://github-readme-stats.vercel.app/api/top-langs/?username=itsmk08&layout=compact&theme=transparent&hide_border=true&title_color=7c6fff&text_color=94a3b8&bg_color=00000000"
-          alt="Top Languages" loading="lazy"/>
+        <div class="gh-card-header">
+          <i class="fa-solid fa-code"></i>
+          <span>Top Languages</span>
+        </div>
+        <div class="gh-languages" id="gh-languages">
+          <!-- Filled by JS or fallback -->
+          <div class="gh-lang-item">
+            <div class="gh-lang-info"><span class="gh-lang-dot" style="background:#3572A5"></span><span>Python</span></div>
+            <div class="gh-lang-bar-wrap"><div class="gh-lang-bar" data-width="65" style="background:#3572A5"></div></div>
+            <span class="gh-lang-pct">65%</span>
+          </div>
+          <div class="gh-lang-item">
+            <div class="gh-lang-info"><span class="gh-lang-dot" style="background:#e34c26"></span><span>HTML</span></div>
+            <div class="gh-lang-bar-wrap"><div class="gh-lang-bar" data-width="18" style="background:#e34c26"></div></div>
+            <span class="gh-lang-pct">18%</span>
+          </div>
+          <div class="gh-lang-item">
+            <div class="gh-lang-info"><span class="gh-lang-dot" style="background:#563d7c"></span><span>CSS</span></div>
+            <div class="gh-lang-bar-wrap"><div class="gh-lang-bar" data-width="10" style="background:#563d7c"></div></div>
+            <span class="gh-lang-pct">10%</span>
+          </div>
+          <div class="gh-lang-item">
+            <div class="gh-lang-info"><span class="gh-lang-dot" style="background:#f1e05a"></span><span>JavaScript</span></div>
+            <div class="gh-lang-bar-wrap"><div class="gh-lang-bar" data-width="7" style="background:#f1e05a"></div></div>
+            <span class="gh-lang-pct">7%</span>
+          </div>
+        </div>
       </div>
+
+      <!-- Contribution / Projects Streak Card -->
       <div class="github-card github-streak tilt-card">
-        <img
-          src="https://streak-stats.demolab.com?user=itsmk08&theme=transparent&hide_border=true&ring=7c6fff&fire=00d4ff&currStreakLabel=7c6fff&sideLabels=94a3b8&dates=94a3b8&stroke=ffffff10"
-          alt="GitHub Streak" loading="lazy"/>
+        <div class="gh-card-header">
+          <i class="fa-solid fa-fire" style="color:#00d4ff"></i>
+          <span>Featured Repositories</span>
+        </div>
+        <div class="gh-repos-grid">
+          <a href="https://github.com/itsmk08/healthcare-analytics-powerbi" target="_blank" class="gh-repo-item">
+            <div class="gh-repo-top">
+              <i class="fa-solid fa-book-open"></i>
+              <span class="gh-repo-name">healthcare-analytics-powerbi</span>
+            </div>
+            <p>Power BI dashboard analyzing 4,200+ patient records with DAX & Star Schema.</p>
+            <div class="gh-repo-meta">
+              <span><span class="gh-lang-dot" style="background:#3572A5"></span>Python</span>
+              <span><i class="fa-solid fa-star"></i> <span id="repo1-stars">—</span></span>
+            </div>
+          </a>
+          <a href="https://github.com/itsmk08/sales-analytics-powerbi" target="_blank" class="gh-repo-item">
+            <div class="gh-repo-top">
+              <i class="fa-solid fa-book-open"></i>
+              <span class="gh-repo-name">sales-analytics-powerbi</span>
+            </div>
+            <p>End-to-end sales intelligence dashboard with revenue trends & KPIs.</p>
+            <div class="gh-repo-meta">
+              <span><span class="gh-lang-dot" style="background:#3572A5"></span>Python</span>
+              <span><i class="fa-solid fa-star"></i> <span id="repo2-stars">—</span></span>
+            </div>
+          </a>
+          <a href="https://github.com/itsmk08/smart_parking_system" target="_blank" class="gh-repo-item">
+            <div class="gh-repo-top">
+              <i class="fa-solid fa-book-open"></i>
+              <span class="gh-repo-name">smart_parking_system</span>
+            </div>
+            <p>IoT parking system with OCR license plate recognition & automated billing.</p>
+            <div class="gh-repo-meta">
+              <span><span class="gh-lang-dot" style="background:#3572A5"></span>Python</span>
+              <span><i class="fa-solid fa-star"></i> <span id="repo3-stars">—</span></span>
+            </div>
+          </a>
+          <a href="https://github.com/itsmk08/online-shop-data-modeling" target="_blank" class="gh-repo-item">
+            <div class="gh-repo-top">
+              <i class="fa-solid fa-book-open"></i>
+              <span class="gh-repo-name">online-shop-data-modeling</span>
+            </div>
+            <p>Relational & dimensional data model with Star Schema & SQL analytics.</p>
+            <div class="gh-repo-meta">
+              <span><span class="gh-lang-dot" style="background:#e34c26"></span>SQL</span>
+              <span><i class="fa-solid fa-star"></i> <span id="repo4-stars">—</span></span>
+            </div>
+          </a>
+        </div>
       </div>
+
     </div>
   </section>
 

@@ -1550,3 +1550,171 @@ body.light-mode body::before { opacity: 0.015; }
   .github-grid { grid-template-columns: 1fr; }
   .github-streak { grid-column: 1; }
 }
+
+/* ===== GITHUB CARDS REDESIGN ===== */
+.github-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+.github-streak { grid-column: 1 / -1; }
+
+.github-card {
+  background: var(--card-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  padding: 1.6rem;
+  backdrop-filter: blur(24px);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+.github-card:hover {
+  border-color: rgba(124,111,255,0.3);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-4px);
+}
+
+/* Card Header */
+.gh-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1.4rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid var(--glass-border);
+}
+.gh-card-header i { color: var(--primary); font-size: 1rem; }
+.gh-card-header span { font-size: 0.9rem; font-weight: 700; color: var(--text); flex: 1; }
+.gh-profile-link {
+  font-size: 0.75rem;
+  color: var(--primary);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: color 0.2s;
+}
+.gh-profile-link:hover { color: var(--secondary); }
+.gh-profile-link i { font-size: 0.65rem; }
+
+/* Stats Grid */
+.gh-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.gh-stat-item {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  text-align: center;
+  transition: var(--transition);
+}
+.gh-stat-item:hover { border-color: var(--primary); background: var(--primary-dim); }
+.gh-stat-item i { font-size: 1.1rem; margin-bottom: 0.2rem; }
+.gh-stat-num { font-size: 1.5rem; font-weight: 900; color: #fff; line-height: 1; }
+.gh-stat-label { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.8px; }
+
+/* Languages */
+.gh-languages { display: flex; flex-direction: column; gap: 0.9rem; }
+.gh-lang-item {
+  display: grid;
+  grid-template-columns: 110px 1fr 36px;
+  align-items: center;
+  gap: 0.7rem;
+}
+.gh-lang-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  color: var(--text);
+  font-weight: 500;
+}
+.gh-lang-dot {
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: inline-block;
+}
+.gh-lang-bar-wrap {
+  height: 6px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 99px;
+  overflow: hidden;
+}
+.gh-lang-bar {
+  height: 100%;
+  width: 0%;
+  border-radius: 99px;
+  transition: width 1.2s cubic-bezier(0.4,0,0.2,1);
+}
+.gh-lang-pct { font-size: 0.72rem; color: var(--text-muted); font-weight: 600; text-align: right; }
+
+/* Repos Grid */
+.gh-repos-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.gh-repo-item {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+  text-decoration: none;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.gh-repo-item:hover {
+  border-color: var(--primary);
+  background: var(--primary-dim);
+  transform: translateY(-3px);
+}
+.gh-repo-top {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.gh-repo-top i { color: var(--primary); font-size: 0.85rem; flex-shrink: 0; }
+.gh-repo-name {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.gh-repo-item p {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  flex: 1;
+}
+.gh-repo-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+.gh-repo-meta span {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.gh-repo-meta i { color: var(--yellow); font-size: 0.65rem; }
+
+@media (max-width: 768px) {
+  .github-grid { grid-template-columns: 1fr; }
+  .github-streak { grid-column: 1; }
+  .gh-repos-grid { grid-template-columns: 1fr; }
+  .gh-stats-grid { grid-template-columns: 1fr 1fr; }
+}
