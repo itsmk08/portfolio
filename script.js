@@ -414,32 +414,17 @@ themeToggle.addEventListener('click', () => {
   localStorage.setItem('mk-theme', next);
 });
 
-// ===== FEATURE 4: CONTACT FORM (EmailJS) =====
-// SETUP INSTRUCTIONS:
-// 1. Go to https://www.emailjs.com and create a free account
-// 2. Create a Service (Gmail) → copy your Service ID
-// 3. Create an Email Template → copy your Template ID
-// 4. Copy your Public Key from Account > API Keys
-// 5. Replace the placeholders below with your actual IDs
-
-const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';   // ← replace
-const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';   // ← replace
-const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';  // ← replace
-
-if (typeof emailjs !== 'undefined') {
-  emailjs.init(EMAILJS_PUBLIC_KEY);
-}
-
+// ===== CONTACT FORM — mailto from visitor's email =====
 const contactForm   = document.getElementById('contact-form');
 const formStatus    = document.getElementById('form-status');
 const formSubmitBtn = document.getElementById('form-submit-btn');
 const formBtnText   = document.getElementById('form-btn-text');
 
 if (contactForm) {
-  contactForm.addEventListener('submit', async (e) => {
+  contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    // Basic validation
+    // Validate all fields
     let valid = true;
     contactForm.querySelectorAll('input, textarea').forEach(field => {
       field.classList.remove('error');
@@ -451,127 +436,22 @@ if (contactForm) {
       return;
     }
 
-    // Loading state
-    formSubmitBtn.disabled = true;
-    formBtnText.textContent = 'Sending...';
-    formStatus.textContent = '';
-    formStatus.className = 'form-status';
+    const name      = document.getElementById('cf-name').value.trim();
+    const fromEmail = document.getElementById('cf-email').value.trim();
+    const subject   = document.getElementById('cf-subject').value.trim();
+    const message   = document.getElementById('cf-message').value.trim();
 
-    try {
-      if (typeof emailjs === 'undefined') throw new Error('EmailJS not loaded');
-      await emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, contactForm);
-      formStatus.textContent = '✅ Message sent! I\'ll get back to you soon.';
-      formStatus.className = 'form-status success';
-      contactForm.reset();
-    } catch (err) {
-      // Fallback: open mailto
-      const name    = document.getElementById('cf-name').value;
-      const subject = document.getElementById('cf-subject').value;
-      const message = document.getElementById('cf-message').value;
-      window.location.href = `mailto:mohan.work.tech@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`From: ${name}\n\n${message}`)}`;
-      formStatus.textContent = '📧 Opening your email client...';
-      formStatus.className = 'form-status success';
-    } finally {
-      formSubmitBtn.disabled = false;
-      formBtnText.textContent = 'Send Message';
-    }
+    // Build mailto: — opens visitor's email client, pre-filled to send TO Mohan
+    const body = `From: ${name} <${fromEmail}>\n\n${message}`;
+    const mailtoLink = `mailto:mohan.work.tech@gmail.com`
+      + `?subject=${encodeURIComponent(subject)}`
+      + `&body=${encodeURIComponent(body)}`;
+
+    window.open(mailtoLink, '_blank');
+
+    formStatus.textContent = '✅ Your email client has opened — just hit Send!';
+    formStatus.className = 'form-status success';
+    contactForm.reset();
   });
 }
 
-// ===== GITHUB STATS VIA PUBLIC API =====
-async function loadGitHubStats() {
-  const USERNAME = 'itsmk08';
-  const REPOS = [
-    { id: 'repo1-stars', name: 'healthcare-analytics-powerbi' },
-    { id: 'repo2-stars', name: 'sales-analytics-powerbi' },
-    { id: 'repo3-stars', name: 'smart_parking_system' },
-    { id: 'repo4-stars', name: 'online-shop-data-modeling' },
-  ];
-
-  try {
-    // Fetch user profile
-    const userRes  = await fetch(`https://api.github.com/users/${USERNAME}`);
-    const userData = await userRes.json();
-
-    if (userData.public_repos !== undefined) {
-      // Fetch all repos for star/fork totals
-      const reposRes  = await fetch(`https://api.github.com/users/${USERNAME}/repos?per_page=100`);
-      const reposData = await reposRes.json();
-
-      const totalStars = reposData.reduce((sum, r) => sum + r.stargazers_count, 0);
-      const totalForks = reposData.reduce((sum, r) => sum + r.forks_count, 0);
-
-      // Animate counters
-      animateGHNum('gh-stars',     totalStars);
-      animateGHNum('gh-repos',     userData.public_repos);
-      animateGHNum('gh-followers', userData.followers);
-      animateGHNum('gh-forks',     totalForks);
-
-      // Per-repo stars
-      REPOS.forEach(({ id, name }) => {
-        const repo = reposData.find(r => r.name === name);
-        const el   = document.getElementById(id);
-        if (el) el.textContent = repo ? repo.stargazers_count : '0';
-      });
-
-      // Build top languages from repos
-      const langMap = {};
-      reposData.forEach(r => { if (r.language) langMap[r.language] = (langMap[r.language] || 0) + 1; });
-      const sorted = Object.entries(langMap).sort((a, b) => b[1] - a[1]).slice(0, 5);
-      const total  = sorted.reduce((s, [, v]) => s + v, 0);
-
-      const colors = { Python:'#3572A5', JavaScript:'#f1e05a', HTML:'#e34c26', CSS:'#563d7c', SQL:'#e38c00', Jupyter:'#DA5B0B' };
-      const langContainer = document.getElementById('gh-languages');
-      if (langContainer && sorted.length > 0) {
-        langContainer.innerHTML = sorted.map(([lang, count]) => {
-          const pct   = Math.round((count / total) * 100);
-          const color = colors[lang] || '#7c6fff';
-          return `
-            <div class="gh-lang-item">
-              <div class="gh-lang-info">
-                <span class="gh-lang-dot" style="background:${color}"></span>
-                <span>${lang}</span>
-              </div>
-              <div class="gh-lang-bar-wrap">
-                <div class="gh-lang-bar" data-width="${pct}" style="background:${color}"></div>
-              </div>
-              <span class="gh-lang-pct">${pct}%</span>
-            </div>`;
-        }).join('');
-      }
-    }
-  } catch (e) {
-    // Silently keep the static fallback values already in HTML
-    console.warn('GitHub API unavailable, using static fallback.');
-  }
-
-  // Animate language bars (works for both API-loaded and static fallback)
-  const ghSection = document.getElementById('github-activity');
-  if (ghSection) {
-    const langBarObs = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.querySelectorAll('.gh-lang-bar').forEach(bar => {
-            bar.style.width = bar.dataset.width + '%';
-          });
-          langBarObs.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.3 });
-    langBarObs.observe(ghSection);
-  }
-}
-
-function animateGHNum(id, target) {
-  const el = document.getElementById(id);
-  if (!el) return;
-  let current = 0;
-  const step = Math.ceil(target / 40);
-  const timer = setInterval(() => {
-    current = Math.min(current + step, target);
-    el.textContent = current;
-    if (current >= target) clearInterval(timer);
-  }, 30);
-}
-
-loadGitHubStats();
