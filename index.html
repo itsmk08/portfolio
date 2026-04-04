@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mohan Koirala | Data Analyst & BI Developer</title>
+  <meta name="description" content="Data Analyst | Power BI Developer | Aspiring Data Engineer — Mohan Koirala's portfolio."/>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Mohan Koirala | Data Analyst & BI Developer"/>
+  <meta property="og:description" content="Turning complex datasets into actionable insights — Power BI, Python, SQL, Data Engineering."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://itsmk08.github.io"/>
+  <meta property="og:image" content="og-preview.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Mohan Koirala | Data Analyst"/>
+  <meta name="twitter:description" content="Power BI · Python · SQL · Data Engineering Portfolio"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="preloader-inner">
+      <div class="preloader-logo">MK<span>.</span></div>
+      <div class="preloader-bar"><div class="preloader-fill"></div></div>
+      <p class="preloader-text">Loading Portfolio...</p>
+    </div>
+  </div>
+
+  <!-- Scroll Progress Bar -->
+  <div id="scroll-progress"></div>
+
+  <!-- Custom Cursor -->
+  <div id="cursor-glow"></div>
+
+  <!-- Particle Canvas -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Navbar -->
+  <nav id="navbar">
+    <div class="nav-logo">MK<span>.</span></div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta magnetic">Hire Me</a>
+    <!-- Dark/Light Mode Toggle -->
+    <button id="theme-toggle" aria-label="Toggle theme">
+      <i class="fa-solid fa-moon" id="theme-icon"></i>
+    </button>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="hero">
+    <div class="hero-content" data-parallax="0.03">
+      <div class="hero-badge">
+        <span class="badge-dot"></span> Available for Work
+      </div>
+      <h1>Mohan <span class="gradient-text">Koirala</span></h1>
+      <h2 class="hero-sub">
+        <span class="typed-static">I am a </span><span class="typed-dynamic"></span><span class="cursor-blink">|</span>
+      </h2>
+      <p class="hero-desc">
+        Turning complex datasets into clear, actionable business insights — through Power BI dashboards, Python analytics, SQL data modeling, and AI-driven solutions.
+      </p>
+      <div class="hero-btns">
+        <a href="#projects" class="btn-primary magnetic">
+          <i class="fa-solid fa-rocket"></i> View Projects
+        </a>
+        <a href="#contact" class="btn-outline magnetic">
+          <i class="fa-solid fa-paper-plane"></i> Let's Talk
+        </a>
+        <a href="Mohan_Koirala_CV.pdf" download class="btn-cv magnetic">
+          <i class="fa-solid fa-download"></i> Download CV
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num" data-count="4">0</span>
+          <span class="stat-label">Projects</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-count="5">0</span>
+          <span class="stat-label">Tools Mastered</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-count="4200" data-suffix="+">0</span>
+          <span class="stat-label">Records Analyzed</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual" data-parallax="-0.05">
+      <div class="avatar-ring">
+        <div class="avatar-glow"></div>
+        <div class="avatar-inner"><span>MK</span></div>
+        <div class="orbit orbit-1"><div class="orbit-dot"><i class="fa-solid fa-chart-bar"></i></div></div>
+        <div class="orbit orbit-2"><div class="orbit-dot"><i class="fa-brands fa-python"></i></div></div>
+        <div class="orbit orbit-3"><div class="orbit-dot"><i class="fa-solid fa-database"></i></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tools Logo Wall -->
+  <div id="tools-strip">
+    <div class="tools-track">
+      <div class="tool-item"><i class="fa-solid fa-chart-column"></i><span>Power BI</span></div>
+      <div class="tool-item"><i class="fa-brands fa-python"></i><span>Python</span></div>
+      <div class="tool-item"><i class="fa-solid fa-database"></i><span>SQL</span></div>
+      <div class="tool-item"><i class="fa-solid fa-file-excel"></i><span>Excel</span></div>
+      <div class="tool-item"><i class="fa-solid fa-table"></i><span>Pandas</span></div>
+      <div class="tool-item"><i class="fa-solid fa-chart-line"></i><span>Matplotlib</span></div>
+      <div class="tool-item"><i class="fa-solid fa-gears"></i><span>Power Query</span></div>
+      <div class="tool-item"><i class="fa-solid fa-brain"></i><span>Scikit-learn</span></div>
+      <div class="tool-item"><i class="fa-brands fa-github"></i><span>GitHub</span></div>
+      <div class="tool-item"><i class="fa-solid fa-diagram-project"></i><span>Star Schema</span></div>
+      <!-- Duplicate for seamless loop -->
+      <div class="tool-item"><i class="fa-solid fa-chart-column"></i><span>Power BI</span></div>
+      <div class="tool-item"><i class="fa-brands fa-python"></i><span>Python</span></div>
+      <div class="tool-item"><i class="fa-solid fa-database"></i><span>SQL</span></div>
+      <div class="tool-item"><i class="fa-solid fa-file-excel"></i><span>Excel</span></div>
+      <div class="tool-item"><i class="fa-solid fa-table"></i><span>Pandas</span></div>
+      <div class="tool-item"><i class="fa-solid fa-chart-line"></i><span>Matplotlib</span></div>
+      <div class="tool-item"><i class="fa-solid fa-gears"></i><span>Power Query</span></div>
+      <div class="tool-item"><i class="fa-solid fa-brain"></i><span>Scikit-learn</span></div>
+      <div class="tool-item"><i class="fa-brands fa-github"></i><span>GitHub</span></div>
+      <div class="tool-item"><i class="fa-solid fa-diagram-project"></i><span>Star Schema</span></div>
+    </div>
+  </div>
+
+  <!-- About -->
+  <section id="about">
+    <div class="section-header">
+      <span class="section-tag">Who I Am</span>
+      <h2>About <span class="gradient-text">Me</span></h2>
+      <p class="section-sub">Passionate about transforming data into decisions</p>
+    </div>
+    <div class="about-grid">
+      <div class="about-card tilt-card">
+        <div class="about-icon"><i class="fa-solid fa-user-tie"></i></div>
+        <p>IT Engineer and Data Analyst with hands-on experience building end-to-end analytics solutions — from raw data ingestion and SQL modeling to interactive Power BI dashboards that drive real business decisions.</p>
+        <p style="margin-top:1rem;">Passionate about AI/ML applications in data engineering, with a focus on automation, insight generation, and scalable data pipelines.</p>
+        <div class="about-tags">
+          <span><i class="fa-solid fa-chart-pie"></i> Data Analysis</span>
+          <span><i class="fa-solid fa-bolt"></i> Power BI</span>
+          <span><i class="fa-brands fa-python"></i> Python</span>
+          <span><i class="fa-solid fa-database"></i> SQL</span>
+          <span><i class="fa-solid fa-brain"></i> AI/ML</span>
+          <span><i class="fa-solid fa-layer-group"></i> Data Engineering</span>
+        </div>
+      </div>
+      <div class="about-info-grid">
+        <div class="info-card tilt-card">
+          <i class="fa-solid fa-location-dot"></i>
+          <div><strong>Location</strong><p>Lalitpur, Nepal</p></div>
+        </div>
+        <div class="info-card tilt-card">
+          <i class="fa-solid fa-envelope"></i>
+          <div><strong>Email</strong><p>mohan.work.tech@gmail.com</p></div>
+        </div>
+        <div class="info-card tilt-card">
+          <i class="fa-solid fa-language"></i>
+          <div><strong>Languages</strong><p>English, Nepali</p></div>
+        </div>
+        <div class="info-card tilt-card">
+          <i class="fa-solid fa-circle-check"></i>
+          <div><strong>Status</strong><p>Open to Opportunities</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <div class="section-header">
+      <span class="section-tag">What I Know</span>
+      <h2>Technical <span class="gradient-text">Skills</span></h2>
+      <p class="section-sub">Tools and technologies I work with daily</p>
+    </div>
+
+    <!-- Skill Group Tabs -->
+    <div class="skill-tabs">
+      <button class="skill-tab active" data-group="all">All</button>
+      <button class="skill-tab" data-group="analytics">Analytics</button>
+      <button class="skill-tab" data-group="visualization">Visualization</button>
+      <button class="skill-tab" data-group="engineering">Engineering</button>
+      <button class="skill-tab" data-group="ai">AI / ML</button>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-card tilt-card" data-group="analytics">
+        <div class="skill-icon analytics"><i class="fa-solid fa-chart-pie"></i></div>
+        <h3>Analytics & Data</h3>
+        <ul>
+          <li>Python (Pandas, NumPy)</li>
+          <li>SQL — Queries, Joins, Aggregations</li>
+          <li>Excel (Pivot Tables, VLOOKUPs)</li>
+          <li>Data Cleaning & EDA</li>
+          <li>Statistical Reporting</li>
+        </ul>
+        <div class="skill-bars">
+          <div class="skill-bar-item">
+            <span>Python</span><div class="bar"><div class="bar-fill" data-width="82"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <span>SQL</span><div class="bar"><div class="bar-fill" data-width="78"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <span>Excel</span><div class="bar"><div class="bar-fill" data-width="85"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-card tilt-card" data-group="visualization">
+        <div class="skill-icon viz"><i class="fa-solid fa-chart-line"></i></div>
+        <h3>Data Visualization & BI</h3>
+        <ul>
+          <li>Power BI — Dashboards, DAX, Power Query</li>
+          <li>Matplotlib & Seaborn</li>
+          <li>KPI Design & Storytelling</li>
+        </ul>
+        <div class="skill-bars">
+          <div class="skill-bar-item">
+            <span>Power BI</span><div class="bar"><div class="bar-fill" data-width="88"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <span>Matplotlib</span><div class="bar"><div class="bar-fill" data-width="72"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-card tilt-card" data-group="engineering">
+        <div class="skill-icon eng"><i class="fa-solid fa-gears"></i></div>
+        <h3>Data Engineering</h3>
+        <ul>
+          <li>Star Schema & Dimensional Modeling</li>
+          <li>ETL / Data Pipelines (Power Query)</li>
+          <li>Database Design & Normalization</li>
+          <li>ER Diagrams & Relational Modeling</li>
+        </ul>
+        <div class="skill-bars">
+          <div class="skill-bar-item">
+            <span>Data Modeling</span><div class="bar"><div class="bar-fill" data-width="80"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <span>ETL</span><div class="bar"><div class="bar-fill" data-width="70"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-card tilt-card" data-group="ai">
+        <div class="skill-icon dev"><i class="fa-solid fa-brain"></i></div>
+        <h3>AI / ML & Programming</h3>
+        <ul>
+          <li>Python — Django, Scripting</li>
+          <li>Computer Vision & OCR</li>
+          <li>Machine Learning (Fundamentals)</li>
+          <li>Intelligent System Design</li>
+        </ul>
+        <div class="skill-bars">
+          <div class="skill-bar-item">
+            <span>Computer Vision</span><div class="bar"><div class="bar-fill" data-width="68"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <span>ML Fundamentals</span><div class="bar"><div class="bar-fill" data-width="60"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-card tilt-card" data-group="analytics">
+        <div class="skill-icon web"><i class="fa-solid fa-globe"></i></div>
+        <h3>Web & Front-End</h3>
+        <ul>
+          <li>HTML, CSS & Bootstrap</li>
+          <li>JavaScript</li>
+          <li>Responsive UI Design</li>
+        </ul>
+        <div class="skill-bars">
+          <div class="skill-bar-item">
+            <span>HTML/CSS</span><div class="bar"><div class="bar-fill" data-width="75"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-card tilt-card" data-group="analytics">
+        <div class="skill-icon soft"><i class="fa-solid fa-lightbulb"></i></div>
+        <h3>Professional Skills</h3>
+        <ul>
+          <li>Problem Solving & Critical Thinking</li>
+          <li>Data Storytelling</li>
+          <li>Business Insight Communication</li>
+          <li>MS Office Suite</li>
+        </ul>
+        <div class="skill-bars">
+          <div class="skill-bar-item">
+            <span>Communication</span><div class="bar"><div class="bar-fill" data-width="88"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <div class="section-header">
+      <span class="section-tag">What I Built</span>
+      <h2>Featured <span class="gradient-text">Projects</span></h2>
+      <p class="section-sub">Real-world analytics solutions with measurable impact</p>
+    </div>
+    <div class="projects-grid">
+
+      <div class="project-card tilt-card">
+        <div class="project-overlay">
+          <a href="https://github.com/itsmk08/healthcare-analytics-powerbi" target="_blank" class="overlay-btn">
+            <i class="fa-brands fa-github"></i> View on GitHub
+          </a>
+        </div>
+        <div class="project-top">
+          <div class="project-icon powerbi"><i class="fa-solid fa-heart-pulse"></i></div>
+          <span class="project-badge">Power BI</span>
+        </div>
+        <span class="project-year">2026</span>
+        <h3>Healthcare Analytics Dashboard</h3>
+        <p>Analyzed <strong>4,200+ patient records</strong> to surface department performance trends, patient demographics, and KPIs — enabling data-driven clinical decisions. Built with star-schema model and dynamic DAX measures.</p>
+        <div class="project-impact">
+          <span><i class="fa-solid fa-arrow-trend-up"></i> 4,200+ records</span>
+          <span><i class="fa-solid fa-gauge-high"></i> Real-time KPIs</span>
+        </div>
+        <div class="project-tags">
+          <span>Power BI</span><span>DAX</span><span>Power Query</span><span>Star Schema</span>
+        </div>
+      </div>
+
+      <div class="project-card tilt-card">
+        <div class="project-overlay">
+          <a href="https://github.com/itsmk08/sales-analytics-powerbi" target="_blank" class="overlay-btn">
+            <i class="fa-brands fa-github"></i> View on GitHub
+          </a>
+        </div>
+        <div class="project-top">
+          <div class="project-icon sales"><i class="fa-solid fa-chart-bar"></i></div>
+          <span class="project-badge">Power BI</span>
+        </div>
+        <span class="project-year">2026</span>
+        <h3>Sales Analytics Dashboard</h3>
+        <p>Built an end-to-end sales intelligence platform tracking <strong>revenue trends, growth rates, and product performance</strong> across time periods — empowering sales teams with actionable, self-service insights.</p>
+        <div class="project-impact">
+          <span><i class="fa-solid fa-arrow-trend-up"></i> Revenue Trends</span>
+          <span><i class="fa-solid fa-layer-group"></i> Star Schema</span>
+        </div>
+        <div class="project-tags">
+          <span>Power BI</span><span>DAX</span><span>Data Cleaning</span><span>KPIs</span>
+        </div>
+      </div>
+
+      <div class="project-card tilt-card">
+        <div class="project-overlay">
+          <a href="https://github.com/itsmk08/smart_parking_system" target="_blank" class="overlay-btn">
+            <i class="fa-brands fa-github"></i> View on GitHub
+          </a>
+        </div>
+        <div class="project-top">
+          <div class="project-icon iot"><i class="fa-solid fa-car"></i></div>
+          <span class="project-badge">Final Year</span>
+        </div>
+        <span class="project-year">2025</span>
+        <h3>IoT Smart Parking System</h3>
+        <p>Engineered an intelligent parking system using <strong>IR sensors, computer vision, and OCR</strong> for automated license plate recognition and billing — reducing manual overhead and improving throughput efficiency.</p>
+        <div class="project-impact">
+          <span><i class="fa-solid fa-robot"></i> Automated Billing</span>
+          <span><i class="fa-solid fa-eye"></i> Computer Vision</span>
+        </div>
+        <div class="project-tags">
+          <span>Python</span><span>IoT</span><span>OCR</span><span>Computer Vision</span>
+        </div>
+      </div>
+
+      <div class="project-card tilt-card">
+        <div class="project-overlay">
+          <a href="https://github.com/itsmk08/online-shop-data-modeling" target="_blank" class="overlay-btn">
+            <i class="fa-brands fa-github"></i> View on GitHub
+          </a>
+        </div>
+        <div class="project-top">
+          <div class="project-icon db"><i class="fa-solid fa-database"></i></div>
+          <span class="project-badge">Data Engineering</span>
+        </div>
+        <span class="project-year">2026</span>
+        <h3>E-Commerce Data Modeling</h3>
+        <p>Designed a production-grade <strong>relational + dimensional data model</strong> for an e-commerce platform — with normalized ER diagrams, Star Schema fact/dimension tables, and validated SQL queries for business analytics.</p>
+        <div class="project-impact">
+          <span><i class="fa-solid fa-diagram-project"></i> Star Schema</span>
+          <span><i class="fa-solid fa-magnifying-glass-chart"></i> SQL Analytics</span>
+        </div>
+        <div class="project-tags">
+          <span>SQL</span><span>Star Schema</span><span>ER Diagram</span><span>Normalization</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- GitHub Activity -->
+  <section id="github-activity">
+    <div class="section-header">
+      <span class="section-tag">Open Source</span>
+      <h2>GitHub <span class="gradient-text">Activity</span></h2>
+      <p class="section-sub">Consistent contributions and public projects</p>
+    </div>
+    <div class="github-grid">
+      <div class="github-card tilt-card">
+        <img
+          src="https://github-readme-stats.vercel.app/api?username=itsmk08&show_icons=true&theme=transparent&hide_border=true&title_color=7c6fff&icon_color=00d4ff&text_color=94a3b8&bg_color=00000000"
+          alt="GitHub Stats" loading="lazy"/>
+      </div>
+      <div class="github-card tilt-card">
+        <img
+          src="https://github-readme-stats.vercel.app/api/top-langs/?username=itsmk08&layout=compact&theme=transparent&hide_border=true&title_color=7c6fff&text_color=94a3b8&bg_color=00000000"
+          alt="Top Languages" loading="lazy"/>
+      </div>
+      <div class="github-card github-streak tilt-card">
+        <img
+          src="https://streak-stats.demolab.com?user=itsmk08&theme=transparent&hide_border=true&ring=7c6fff&fire=00d4ff&currStreakLabel=7c6fff&sideLabels=94a3b8&dates=94a3b8&stroke=ffffff10"
+          alt="GitHub Streak" loading="lazy"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education & Training -->
+  <section id="education">
+    <div class="section-header">
+      <span class="section-tag">My Background</span>
+      <h2>Education & <span class="gradient-text">Training</span></h2>
+      <p class="section-sub">Academic foundation and professional development</p>
+    </div>
+    <div class="timeline">
+
+      <div class="timeline-item tilt-card">
+        <div class="timeline-icon training"><i class="fa-solid fa-laptop-code"></i></div>
+        <div class="timeline-content">
+          <span class="timeline-year">Dec 2025 – Feb 2026</span>
+          <h3>Business Data Analytics Training Program</h3>
+          <p class="timeline-org"><i class="fa-solid fa-building"></i> Skill Shikshya, Kathmandu · 2.5 months</p>
+          <p>Intensive hands-on training in Python, SQL, Excel, and Power BI for end-to-end data analysis workflows. Built dashboards, performed EDA, and delivered data-driven reports for business decision-making.</p>
+          <div class="timeline-tags"><span>Python</span><span>SQL</span><span>Power BI</span><span>EDA</span></div>
+        </div>
+      </div>
+
+      <div class="timeline-item tilt-card">
+        <div class="timeline-icon degree"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div class="timeline-content">
+          <span class="timeline-year">2021 – 2025</span>
+          <h3>Bachelor of Engineering in Information Technology</h3>
+          <p class="timeline-org"><i class="fa-solid fa-building"></i> Nepal College of Information Technology, Lalitpur</p>
+          <p>Core coursework in Data Structures, DBMS, Software Engineering, Computer Networks, Data Analytics, and Machine Learning — with a final year project in IoT and intelligent systems.</p>
+          <div class="timeline-tags"><span>DBMS</span><span>Data Analytics</span><span>Machine Learning</span><span>Software Engineering</span></div>
+        </div>
+      </div>
+
+      <div class="timeline-item tilt-card">
+        <div class="timeline-icon school"><i class="fa-solid fa-book"></i></div>
+        <div class="timeline-content">
+          <span class="timeline-year">2018 – 2020</span>
+          <h3>Intermediate Level — Science</h3>
+          <p class="timeline-org"><i class="fa-solid fa-building"></i> Ambition College, Kathmandu</p>
+          <p>Physics, Chemistry, Mathematics, Computer Science.</p>
+          <div class="timeline-tags"><span>Mathematics</span><span>Computer Science</span></div>
+        </div>
+      </div>
+
+      <div class="timeline-item tilt-card">
+        <div class="timeline-icon school"><i class="fa-solid fa-school"></i></div>
+        <div class="timeline-content">
+          <span class="timeline-year">2018</span>
+          <h3>Secondary Education (SEE)</h3>
+          <p class="timeline-org"><i class="fa-solid fa-building"></i> Karnali Education Foundation, Jhapa</p>
+          <p>Physics, Chemistry, Mathematics, Computer Science.</p>
+          <div class="timeline-tags"><span>Mathematics</span><span>Science</span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="section-header">
+      <span class="section-tag">Get In Touch</span>
+      <h2>Let's <span class="gradient-text">Connect</span></h2>
+      <p class="section-sub">Open to Data Analyst, BI Developer, and Data Engineer roles</p>
+    </div>
+    <div class="contact-wrapper">
+      <div class="contact-cta-box tilt-card">
+        <div class="contact-cta-icon"><i class="fa-solid fa-handshake"></i></div>
+        <h3>Ready to collaborate?</h3>
+        <p>Whether you have a data challenge, a project idea, or a job opportunity — I'd love to hear from you.</p>
+        <div class="availability-badge">
+          <span class="avail-dot"></span> Available from <strong>March 2026</strong>
+        </div>
+        <a href="mailto:mohan.work.tech@gmail.com" class="btn-primary magnetic">
+          <i class="fa-solid fa-envelope"></i> Send an Email
+        </a>
+      </div>
+      <div class="contact-links">
+        <a href="mailto:mohan.work.tech@gmail.com" class="contact-card tilt-card">
+          <div class="contact-icon email"><i class="fa-solid fa-envelope"></i></div>
+          <div class="contact-info"><strong>Email</strong><span>mohan.work.tech@gmail.com</span></div>
+          <i class="fa-solid fa-arrow-right contact-arrow"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/mohan-koirala-07b0432ab/" target="_blank" class="contact-card tilt-card">
+          <div class="contact-icon linkedin"><i class="fa-brands fa-linkedin"></i></div>
+          <div class="contact-info"><strong>LinkedIn</strong><span>mohan-koirala-07b0432ab</span></div>
+          <i class="fa-solid fa-arrow-right contact-arrow"></i>
+        </a>
+        <a href="https://github.com/itsmk08" target="_blank" class="contact-card tilt-card">
+          <div class="contact-icon github"><i class="fa-brands fa-github"></i></div>
+          <div class="contact-info"><strong>GitHub</strong><span>github.com/itsmk08</span></div>
+          <i class="fa-solid fa-arrow-right contact-arrow"></i>
+        </a>
+
+        <!-- Contact Form -->
+        <form id="contact-form" class="contact-form" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cf-name">Your Name</label>
+              <input type="text" id="cf-name" name="from_name" placeholder="John Doe" required/>
+            </div>
+            <div class="form-group">
+              <label for="cf-email">Your Email</label>
+              <input type="email" id="cf-email" name="from_email" placeholder="john@example.com" required/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="cf-subject">Subject</label>
+            <input type="text" id="cf-subject" name="subject" placeholder="Data Analyst Opportunity" required/>
+          </div>
+          <div class="form-group">
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" name="message" rows="4" placeholder="Hi Mohan, I'd like to discuss..." required></textarea>
+          </div>
+          <button type="submit" class="btn-primary form-submit magnetic" id="form-submit-btn">
+            <i class="fa-solid fa-paper-plane"></i>
+            <span id="form-btn-text">Send Message</span>
+          </button>
+          <div id="form-status" class="form-status"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">MK<span>.</span></div>
+      <p>© 2026 Mohan Koirala · Data Analyst · Power BI Developer · Aspiring Data Engineer</p>
+      <div class="footer-links">
+        <a href="https://github.com/itsmk08" target="_blank"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/mohan-koirala-07b0432ab/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="mailto:mohan.work.tech@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Side Dot Navigation -->
+  <nav id="side-nav">
+    <div class="side-nav-item" data-section="hero"            data-label="Home"></div>
+    <div class="side-nav-item" data-section="about"           data-label="About"></div>
+    <div class="side-nav-item" data-section="skills"          data-label="Skills"></div>
+    <div class="side-nav-item" data-section="projects"        data-label="Projects"></div>
+    <div class="side-nav-item" data-section="github-activity" data-label="GitHub"></div>
+    <div class="side-nav-item" data-section="education"       data-label="Education"></div>
+    <div class="side-nav-item" data-section="contact"         data-label="Contact"></div>
+  </nav>
+
+  <!-- Section Counter -->
+  <div id="section-counter"><span id="sec-current">01</span><span class="sec-sep">/</span><span class="sec-total">07</span></div>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
