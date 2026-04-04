@@ -1718,3 +1718,192 @@ body.light-mode body::before { opacity: 0.015; }
   .gh-repos-grid { grid-template-columns: 1fr; }
   .gh-stats-grid { grid-template-columns: 1fr 1fr; }
 }
+
+/* ===== CERTIFICATIONS SECTION ===== */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.cert-card {
+  background: var(--card-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  padding: 1.8rem;
+  backdrop-filter: blur(24px);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.cert-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
+}
+.cert-card:hover { border-color: rgba(124,111,255,0.35); transform: translateY(-6px); box-shadow: var(--shadow-glow); }
+.cert-card:hover::before { transform: scaleX(1); }
+
+.cert-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cert-icon {
+  width: 46px; height: 46px;
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem;
+  transition: transform 0.3s;
+}
+.cert-card:hover .cert-icon { transform: scale(1.1) rotate(-5deg); }
+
+.cert-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.28rem 0.75rem;
+  border-radius: 50px;
+  letter-spacing: 0.3px;
+}
+.cert-status.completed {
+  background: rgba(52,211,153,0.12);
+  border: 1px solid rgba(52,211,153,0.3);
+  color: var(--green);
+}
+.cert-status.inprogress {
+  background: rgba(251,191,36,0.1);
+  border: 1px solid rgba(251,191,36,0.25);
+  color: var(--yellow);
+}
+
+.cert-card h3 {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.4;
+}
+
+.cert-issuer {
+  font-size: 0.82rem;
+  color: var(--secondary);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.cert-desc {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  flex: 1;
+}
+
+.cert-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.4rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--glass-border);
+}
+
+.cert-date {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.cert-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+.cert-skills span {
+  background: var(--primary-dim);
+  border: 1px solid rgba(124,111,255,0.2);
+  color: var(--primary);
+  padding: 0.18rem 0.6rem;
+  border-radius: 50px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .cert-grid { grid-template-columns: 1fr; }
+}
+
+/* ===== PROFILE PHOTO ===== */
+
+/* Hero avatar image */
+.avatar-inner {
+  overflow: hidden;
+  padding: 0;
+}
+.avatar-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 50%;
+  display: block;
+}
+
+/* Preloader photo */
+.preloader-logo { padding: 0; }
+.preloader-img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 3px solid var(--primary);
+  box-shadow: 0 0 30px rgba(124,111,255,0.5);
+}
+
+/* Navbar logo photo */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.nav-logo-img {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 2px solid var(--primary);
+}
+
+/* Footer logo photo */
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.footer-logo-img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 2px solid var(--primary);
+}
