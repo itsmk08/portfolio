@@ -302,11 +302,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // ===== TYPING EFFECT (IMPROVED) =====
 const roles = [
-  'Data Analyst',
-  'Power BI Developer',
-  'AI / ML Enthusiast',
-  'Aspiring Data Engineer',
-  'IT Engineer',
+  'a Data Analyst',
+  'a Power BI Developer',
+  'an AI / ML Enthusiast',
+  'an Aspiring Data Engineer',
+  'an IT Engineer',
 ];
 let roleIndex = 0, charIndex = 0, deleting = false;
 const typedEl = document.querySelector('.typed-dynamic');

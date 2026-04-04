@@ -1907,3 +1907,76 @@ body.light-mode body::before { opacity: 0.015; }
   object-position: center top;
   border: 2px solid var(--primary);
 }
+
+/* ===== CONTACT SECTION MOBILE FIX ===== */
+@media (max-width: 768px) {
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  /* Show CTA box on mobile too */
+  .contact-cta-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 1.5rem;
+  }
+  .contact-cta-box p { font-size: 0.88rem; }
+
+  /* Stack contact link cards vertically */
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+
+  .contact-card {
+    padding: 1rem 1.2rem;
+  }
+  .contact-info span {
+    font-size: 0.78rem;
+    word-break: break-all;
+  }
+
+  /* Form full width on mobile */
+  .contact-form {
+    padding: 1.4rem 1rem;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  .form-group input,
+  .form-group textarea {
+    font-size: 0.9rem;
+    padding: 0.7rem 0.9rem;
+  }
+  .form-submit {
+    width: 100%;
+    justify-content: center;
+    padding: 0.85rem 1rem;
+  }
+
+  /* Availability badge wrap fix */
+  .availability-badge {
+    font-size: 0.78rem;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-cta-icon {
+    width: 52px; height: 52px;
+    font-size: 1.3rem;
+  }
+  .contact-cta-box h3 { font-size: 1rem; }
+  .contact-card {
+    gap: 0.7rem;
+  }
+  .contact-icon {
+    width: 38px; height: 38px;
+    font-size: 1rem;
+  }
+}
