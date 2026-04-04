@@ -470,3 +470,17 @@ if (contactForm) {
   });
 }
 
+
+// ===== SEND AN EMAIL BUTTON — scroll to form & focus first field =====
+const sendEmailBtn = document.getElementById('send-email-btn');
+if (sendEmailBtn) {
+  sendEmailBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const form = document.getElementById('contact-form');
+    const nameField = document.getElementById('cf-name');
+    if (!form || !nameField) return;
+    const top = form.getBoundingClientRect().top + window.scrollY - 120;
+    window.scrollTo({ top, behavior: 'smooth' });
+    setTimeout(() => nameField.focus(), 600);
+  });
+}
