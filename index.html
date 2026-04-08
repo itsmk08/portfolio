@@ -27,7 +27,7 @@
   <!-- Preloader -->
   <div id="preloader">
     <div class="preloader-inner">
-      <div class="preloader-logo"><img src="IMG_0443.jpg" alt="MK" class="preloader-img"/></div>
+      <div class="preloader-logo"><img src="mk.jpg" alt="MK" class="preloader-img"/></div>
       <div class="preloader-bar"><div class="preloader-fill"></div></div>
       <p class="preloader-text">Loading Portfolio...</p>
     </div>
@@ -44,7 +44,7 @@
 
   <!-- Navbar -->
   <nav id="navbar">
-    <div class="nav-logo"><img src="IMG_0443.jpg" alt="MK" class="nav-logo-img"/>MK<span>.</span></div>
+    <div class="nav-logo"><img src="mk.jpg" alt="MK" class="nav-logo-img"/>MK<span>.</span></div>
     <ul class="nav-links" id="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
@@ -112,7 +112,7 @@
     <div class="hero-visual" data-parallax="-0.05">
       <div class="avatar-ring">
         <div class="avatar-glow"></div>
-        <div class="avatar-inner"><img src="IMG_0443.jpg" alt="Mohan Koirala"/></div>
+        <div class="avatar-inner"><img src="mk.jpg" alt="Mohan Koirala"/></div>
         <div class="orbit orbit-1"><div class="orbit-dot"><i class="fa-solid fa-chart-bar"></i></div></div>
         <div class="orbit orbit-2"><div class="orbit-dot"><i class="fa-brands fa-python"></i></div></div>
         <div class="orbit orbit-3"><div class="orbit-dot"><i class="fa-solid fa-database"></i></div></div>
@@ -155,21 +155,39 @@
       <p class="section-sub">Passionate about transforming data into decisions</p>
     </div>
     <div class="about-grid">
-      <div class="about-card tilt-card">
-        <div class="about-icon"><i class="fa-solid fa-user-tie"></i></div>
+
+      <!-- Description + Photo combined -->
+      <div class="about-card tilt-card" style="--about-bg: url('mk.jpg')">
+        <div class="about-card-top">
+          <div class="about-photo-frame">
+            <img src="mk.jpg" alt="Mohan Koirala" class="about-photo-img"/>
+            <div class="about-photo-glow"></div>
+          </div>
+          <div class="about-card-intro">
+            <h3 class="about-name">Mohan Koirala</h3>
+            <p class="about-role">IT Engineer · Data Analyst</p>
+            <div class="about-social-row">
+              <a href="https://www.linkedin.com/in/mohan-koirala-07b0432ab/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="https://github.com/itsmk08" target="_blank"><i class="fa-brands fa-github"></i></a>
+              <a href="mailto:mohan.work.tech@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+          </div>
+        </div>
         <p>I am an IT Engineer with a strong interest in Data Analytics and Business Intelligence. I enjoy working with data to uncover insights, solve business problems, and support data-driven decision-making.</p>
         <p style="margin-top:1rem;">I have hands-on experience across the analytics workflow, including data preparation, SQL-based data modeling, and building interactive dashboards using Power BI. I focus on turning raw data into clear, meaningful visualizations that help stakeholders understand key trends and performance metrics.</p>
         <p style="margin-top:1rem;">While my primary focus is Data and Business Analytics, I am also exploring AI/ML concepts and Data Engineering to strengthen my ability to build more automated, scalable, and intelligent data solutions.</p>
         <p style="margin-top:1rem;">I am continuously improving my technical and analytical skills, with a strong motivation to grow into a well-rounded data professional.</p>
-        <div class="about-tags">
-          <span><i class="fa-solid fa-chart-pie"></i> Data Analysis</span>
-          <span><i class="fa-solid fa-bolt"></i> Power BI</span>
-          <span><i class="fa-brands fa-python"></i> Python</span>
-          <span><i class="fa-solid fa-database"></i> SQL</span>
-          <span><i class="fa-solid fa-brain"></i> AI/ML</span>
-          <span><i class="fa-solid fa-layer-group"></i> Data Engineering</span>
+        <div class="about-tools">
+          <div class="about-tool-item"><i class="fa-solid fa-chart-column"></i><span>Power BI</span></div>
+          <div class="about-tool-item"><i class="fa-brands fa-python"></i><span>Python</span></div>
+          <div class="about-tool-item"><i class="fa-solid fa-database"></i><span>SQL</span></div>
+          <div class="about-tool-item"><i class="fa-solid fa-file-excel"></i><span>Excel</span></div>
+          <div class="about-tool-item"><i class="fa-solid fa-brain"></i><span>AI/ML</span></div>
+          <div class="about-tool-item"><i class="fa-solid fa-gears"></i><span>ETL</span></div>
         </div>
       </div>
+
+      <!-- Info Panel -->
       <div class="about-right">
         <div class="about-status-card tilt-card">
           <div class="about-status-icon"><i class="fa-solid fa-circle-check"></i></div>
@@ -186,7 +204,7 @@
           </div>
           <div class="highlight-item">
             <div class="highlight-icon"><i class="fa-solid fa-bolt"></i></div>
-            <div><strong>Primary Tool</strong><p>Power BI, Python, SQL</p></div>
+            <div><strong>Primary Tools</strong><p>Power BI, Python, SQL</p></div>
           </div>
           <div class="highlight-item">
             <div class="highlight-icon"><i class="fa-solid fa-graduation-cap"></i></div>
@@ -198,6 +216,7 @@
           </div>
         </div>
       </div>
+
     </div>
   </section>
 
@@ -559,7 +578,7 @@
   <!-- Footer -->
   <footer>
     <div class="footer-inner">
-      <div class="footer-logo"><img src="IMG_0443.jpg" alt="MK" class="footer-logo-img"/>MK<span>.</span></div>
+      <div class="footer-logo"><img src="mk.jpg" alt="MK" class="footer-logo-img"/>MK<span>.</span></div>
       <p>© 2026 Mohan Koirala · Data Analyst · Power BI Developer · Aspiring Data Engineer</p>
       <div class="footer-links">
         <a href="https://github.com/itsmk08" target="_blank"><i class="fa-brands fa-github"></i></a>
